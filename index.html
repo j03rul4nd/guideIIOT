@@ -7,16 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #000000; /* Negro sólido */
-      --background-color: #FFFFFF; /* Fondo blanco */
-      --text-color: #1C1E21; /* Texto negro oscuro */
-      --secondary-text-color: #6B7280; /* Texto gris */
-      --card-bg: #F9FAFB; /* Fondo de tarjetas */
-      --border-color: #E5E7EB; /* Bordes suaves */
+      --primary-color: #FFFFFF; /* Blanco para texto */
+      --secondary-color: rgba(255, 255, 255, 0.7); /* Blanco translúcido */
+      --background-color: #F9FAFB; /* Fondo general */
+      --card-overlay: rgba(0, 0, 0, 0.6); /* Superposición oscura */
       --font-family: 'Inter', sans-serif;
     }
 
-    /* Reset de estilos básicos */
     * {
       margin: 0;
       padding: 0;
@@ -26,25 +23,26 @@
     body {
       font-family: var(--font-family);
       background-color: var(--background-color);
-      color: var(--text-color);
-      line-height: 1.8;
+      color: var(--primary-color);
       margin: 0;
+      line-height: 1.8;
     }
 
     header {
       padding: 2rem;
       text-align: center;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid #E5E7EB;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: bold;
+      color: #1C1E21;
     }
 
     header p {
       font-size: 1.2rem;
-      color: var(--secondary-text-color);
+      color: #6B7280;
       margin-top: 0.5rem;
     }
 
@@ -55,19 +53,19 @@
 
     .cta-section a {
       display: inline-block;
-      background: var(--primary-color);
-      color: var(--background-color);
+      background: #000;
+      color: #FFF;
       padding: 1rem 2rem;
       font-size: 1rem;
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      margin: 1rem 0;
-      transition: all 0.3s;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .cta-section a:hover {
-      background: #333333;
+      background: #333;
+      transform: scale(1.05);
     }
 
     .news-section {
@@ -80,35 +78,83 @@
     }
 
     .news-card {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: left;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .news-card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--card-overlay);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      color: var(--primary-color);
+      transition: background 0.3s ease;
+    }
+
+    .news-card:hover .overlay {
+      background: rgba(0, 0, 0, 0.8);
     }
 
     .news-card h3 {
       font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary-color);
+      font-weight: 600;
+      margin: 0 0 0.5rem;
     }
 
     .news-card p {
-      font-size: 0.9rem;
-      color: var(--secondary-text-color);
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      background: var(--card-bg);
-      color: var(--secondary-text-color);
-      border-top: 1px solid var(--border-color);
+      background: #F9FAFB;
+      color: #6B7280;
+      border-top: 1px solid #E5E7EB;
     }
 
     footer a {
-      color: var(--primary-color);
+      color: #000;
       text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .news-card h3 {
+        font-size: 1rem;
+      }
+      .news-card p {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .news-card {
+        height: 200px;
+      }
+      .news-card h3 {
+        font-size: 0.9rem;
+      }
+      .news-card p {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -124,17 +170,23 @@
 </section>
 
 <section class="news-section">
-  <div class="news-card">
-    <h3>Product</h3>
-    <p>Discover the latest tools and platforms for industrial IoT projects.</p>
+  <div class="news-card" style="background-image: url('./relative-url-to-image1.png');">
+    <div class="overlay">
+      <h3>Product</h3>
+      <p>Discover the latest tools and platforms for industrial IoT projects.</p>
+    </div>
   </div>
-  <div class="news-card">
-    <h3>Research</h3>
-    <p>Learn about the newest trends and technologies in the IIoT landscape.</p>
+  <div class="news-card" style="background-image: url('./relative-url-to-image2.png');">
+    <div class="overlay">
+      <h3>Research</h3>
+      <p>Learn about the newest trends and technologies in the IIoT landscape.</p>
+    </div>
   </div>
-  <div class="news-card">
-    <h3>Case Studies</h3>
-    <p>Read how others have successfully implemented IIoT strategies.</p>
+  <div class="news-card" style="background-image: url('./relative-url-to-image3.png');">
+    <div class="overlay">
+      <h3>Case Studies</h3>
+      <p>Read how others have successfully implemented IIoT strategies.</p>
+    </div>
   </div>
 </section>
 
