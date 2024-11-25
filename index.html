@@ -1,13 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The IIoT Success Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #000000; /* Negro sólido */
+      --background-color: #FFFFFF; /* Fondo blanco */
+      --text-color: #1C1E21; /* Texto negro oscuro */
+      --secondary-text-color: #6B7280; /* Texto gris */
+      --card-bg: #F9FAFB; /* Fondo de tarjetas */
+      --border-color: #E5E7EB; /* Bordes suaves */
+      --font-family: 'Inter', sans-serif;
+    }
+
+    /* Reset de estilos básicos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--secondary-text-color);
+      margin-top: 0.5rem;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .cta-section a {
+      display: inline-block;
+      background: var(--primary-color);
+      color: var(--background-color);
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      margin: 1rem 0;
+      transition: all 0.3s;
+    }
+
+    .cta-section a:hover {
+      background: #333333;
+    }
+
+    .news-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .news-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .news-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .news-card p {
+      font-size: 0.9rem;
+      color: var(--secondary-text-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--card-bg);
+      color: var(--secondary-text-color);
+      border-top: 1px solid var(--border-color);
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Introducing IIoT Guide</h1>
+  <p>The ultimate guide to ensure the success of your IoT projects.</p>
+</header>
+
+<section class="cta-section">
+  <a href="#">Download the Guide</a>
+</section>
+
+<section class="news-section">
+  <div class="news-card">
+    <h3>Product</h3>
+    <p>Discover the latest tools and platforms for industrial IoT projects.</p>
+  </div>
+  <div class="news-card">
+    <h3>Research</h3>
+    <p>Learn about the newest trends and technologies in the IIoT landscape.</p>
+  </div>
+  <div class="news-card">
+    <h3>Case Studies</h3>
+    <p>Read how others have successfully implemented IIoT strategies.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 IIoT Guide. All rights reserved. <a href="#">Privacy Policy</a></p>
+</footer>
+
+</body>
 </html>
