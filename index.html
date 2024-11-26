@@ -3,196 +3,387 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The IIoT Success Guide</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Guía IIoT con Fondo Animado</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
   <style>
-    :root {
-      --primary-color: #FFFFFF; /* Blanco para texto */
-      --secondary-color: rgba(255, 255, 255, 0.7); /* Blanco translúcido */
-      --background-color: #F9FAFB; /* Fondo general */
-      --card-overlay: rgba(0, 0, 0, 0.6); /* Superposición oscura */
-      --font-family: 'Inter', sans-serif;
-    }
+/* Global */
+* {
+  box-sizing: border-box;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem; /* Espaciado cómodo alrededor */
+  background: black;
+  color: white;
+  text-align: center;
+  overflow: auto;
+}
 
-    body {
-      font-family: var(--font-family);
-      background-color: var(--background-color);
-      color: var(--primary-color);
-      margin: 0;
-      line-height: 1.8;
-    }
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; /* Centra el contenido */
+}
 
-    header {
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 1px solid #E5E7EB;
-    }
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Fondo detrás de todo */
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #1C1E21;
-    }
+/* Header */
+header {
+  text-align: center;
+  z-index: 1;
+  max-width: 90%;
+  padding-top: 10vh; /* Espacio superior para comodidad */
+}
 
-    header p {
-      font-size: 1.2rem;
-      color: #6B7280;
-      margin-top: 0.5rem;
-    }
+header h1 {
+  font-size: 3rem;
+  margin: 0 0 1.5rem; /* Separación entre título y descripción */
+}
 
-    .cta-section {
-      text-align: center;
-      margin: 2rem 0;
-    }
+header p {
+  font-size: 1.2rem;
+  margin: 0 0 3rem; /* Espacio mayor para el siguiente contenido */
+}
 
-    .cta-section a {
-      display: inline-block;
-      background: #000;
-      color: #FFF;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
 
-    .cta-section a:hover {
-      background: #333;
-      transform: scale(1.05);
-    }
+  header p {
+    font-size: 0.9rem;
+  }
+}
 
-    .news-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
 
-    .news-card {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      height: 250px;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+  header p {
+    font-size: 0.8rem;
+  }
+}
 
-    .news-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
+/* CTA Section */
+.cta-section {
+  margin-top: 3rem; /* Separación del header */
+}
 
-    .news-card .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--card-overlay);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1rem;
-      color: var(--primary-color);
-      transition: background 0.3s ease;
-    }
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem; /* Tamaño cómodo para clics */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-    .news-card:hover .overlay {
-      background: rgba(0, 0, 0, 0.8);
-    }
+.cta-button:hover {
+  background-color: #f0f0f0;
+}
 
-    .news-card h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem;
-    }
+@media (max-width: 768px) {
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
 
-    .news-card p {
-      font-size: 1rem;
-      font-weight: 400;
-      margin: 0;
-    }
+@media (max-width: 480px) {
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #F9FAFB;
-      color: #6B7280;
-      border-top: 1px solid #E5E7EB;
-    }
+/* News Section */
+.news-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* Más espacio entre tarjetas */
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto; /* Separación con el resto del contenido */
+  padding: 1rem;
+}
 
-    footer a {
-      color: #000;
-      text-decoration: none;
-    }
+.news-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
+}
 
-    @media (max-width: 768px) {
-      .news-card h3 {
-        font-size: 1rem;
-      }
-      .news-card p {
-        font-size: 0.9rem;
-      }
-    }
+.news-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
 
-    @media (max-width: 480px) {
-      .news-card {
-        height: 200px;
-      }
-      .news-card h3 {
-        font-size: 0.9rem;
-      }
-      .news-card p {
-        font-size: 0.8rem;
-      }
-    }
+.news-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #000000, #ffffff00);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 1.5rem; /* Más espacio interno */
+  box-sizing: border-box;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.news-card:hover .overlay {
+  background: linear-gradient(to top, #000000, #00000094);
+}
+
+.news-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.news-card p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .news-card {
+    height: 200px;
+  }
+  .news-card .overlay {
+    padding: 1rem; /* Ajusta el padding para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .news-card {
+    height: 180px;
+  }
+  .news-card h3 {
+    font-size: 1rem;
+  }
+  .news-card p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem; /* Separación del contenido principal */
+  padding-top: 2rem; /* Espacio interno superior */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea sutil */
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1rem 0;
+}
+
+footer a {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 0.7rem;
+  }
+}
+
+
   </style>
 </head>
 <body>
-
-<header>
-  <h1>Introducing IIoT Guide</h1>
-  <p>The ultimate guide to ensure the success of your IoT projects.</p>
-</header>
-
-<section class="cta-section">
-  <a href="#">Download the Guide</a>
-</section>
-
-<section class="news-section">
+  <header>
+    <h1>Guía Definitiva de Implementación IIoT</h1>
+    <p>Optimiza y asegura el éxito de tus proyectos IIoT con una herramienta estratégica paso a paso.</p>
+  </header>
+  
+  <section class="cta-section">
+    <a href="./iot.pdf" class="cta-button">Descarga la Guía Ahora</a>
+  </section>
+  
+  <section class="news-section">
   <div class="news-card" style="background-image: url('./relative-url-to-image1.png');">
     <div class="overlay">
-      <h3>Product</h3>
-      <p>Discover the latest tools and platforms for industrial IoT projects.</p>
+      <h3>Planificación Estratégica</h3>
+      <p>Aprende a definir objetivos claros, gestionar recursos y elegir plataformas ideales para tus proyectos IIoT.</p>
     </div>
   </div>
   <div class="news-card" style="background-image: url('./relative-url-to-image2.png');">
     <div class="overlay">
-      <h3>Research</h3>
-      <p>Learn about the newest trends and technologies in the IIoT landscape.</p>
+      <h3>Gestión de Riesgos</h3>
+      <p>Descubre cómo prevenir errores comunes, minimizar riesgos y asegurar un rendimiento eficiente y seguro.</p>
     </div>
   </div>
   <div class="news-card" style="background-image: url('./relative-url-to-image3.png');">
     <div class="overlay">
-      <h3>Case Studies</h3>
-      <p>Read how others have successfully implemented IIoT strategies.</p>
+      <h3>Casos de Éxito</h3>
+      <p>Inspírate con ejemplos prácticos de implementación efectiva de estrategias IIoT.</p>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>&copy; 2024 IIoT Guide. All rights reserved. <a href="#">Privacy Policy</a></p>
-</footer>
+  
+  
+  
+  
+  <footer>
+    <p>&copy; 2024 Guía IIoT. Todos los derechos reservados. <a href="#">Política de Privacidad</a></p>
+  </footer>
 
+  <script type="module">
+    import * as THREE from "three";
+
+    // Escena y cámara
+    const scene = new THREE.Scene();
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+    camera.position.z = 1;
+
+    // Renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Geometría del plano
+    const geometry = new THREE.PlaneGeometry(2, 2);
+
+    // Material del shader
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+        u_time: { value: 0.0 },
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform vec2 u_resolution;
+        uniform float u_time;
+
+        varying vec2 vUv;
+
+        float random(vec2 st) {
+          return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+        }
+
+        float noise(vec2 st) {
+          vec2 i = floor(st);
+          vec2 f = fract(st);
+
+          float a = random(i);
+          float b = random(i + vec2(1.0, 0.0));
+          float c = random(i + vec2(0.0, 1.0));
+          float d = random(i + vec2(1.0, 1.0));
+
+          vec2 u = f * f * (3.0 - 2.0 * f);
+
+          return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+        }
+
+        float fbm(vec2 st) {
+          float value = 0.0;
+          float amplitude = 0.5;
+          vec2 shift = vec2(100.0);
+          for (int i = 0; i < 6; i++) {
+            value += amplitude * noise(st);
+            st = st * 2.0 + shift;
+            amplitude *= 0.5;
+          }
+          return value;
+        }
+
+        float circularGradient(vec2 st, vec2 center, float radius, float softness) {
+          float d = distance(st, center);
+          return smoothstep(radius + softness, radius - softness, d);
+        }
+
+        void main() {
+          vec2 st = gl_FragCoord.xy / u_resolution.xy;
+          st.x *= u_resolution.x / u_resolution.y;
+
+          vec3 color1 = vec3(0.9, 0.4, 0.7);
+          vec3 color2 = vec3(0.5, 0.7, 0.95);
+          vec3 color3 = vec3(1.0, 0.8, 0.9);
+
+          vec3 baseGradient = mix(color1, color2, st.y);
+
+          float n = fbm(st * 3.0 + u_time * 0.2);
+
+          float radial = circularGradient(st, vec2(0.5, 0.5), 0.5, 0.3);
+          vec3 finalColor = mix(baseGradient, color3, n * radial);
+
+          float shadow = smoothstep(0.3, 0.6, st.y - st.x * 0.7) * 0.5;
+          finalColor -= shadow;
+
+          gl_FragColor = vec4(finalColor, 1.0);
+        }
+      `,
+      side: THREE.DoubleSide
+    });
+
+    const plane = new THREE.Mesh(geometry, material);
+    scene.add(plane);
+
+    // Manejar el cambio de tamaño
+    window.addEventListener("resize", () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      material.uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
+    });
+
+    // Bucle de animación
+    const clock = new THREE.Clock();
+    function animate() {
+      material.uniforms.u_time.value = clock.getElapsedTime();
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
 </html>
