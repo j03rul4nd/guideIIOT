@@ -39,7 +39,7 @@
     background: rgb(0 0 0 / 83%);
     border-radius: 10px;
     background: url();
-    background-image: url(./randombg.png);
+    background-image: url(/randombg.png);
   }
   
   /* Contenedor del formulario */
