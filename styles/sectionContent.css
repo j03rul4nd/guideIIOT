@@ -32,7 +32,22 @@ section#section-riesgos {
     height: 1px;
     margin-bottom: 1rem;
 }
-
+section#section-casos {
+    padding: 30px;
+    /* color: #1a1a1a; */
+    color: #1F3319;
+    background: linear-gradient(180deg, #e0ebff, #00000000);
+}
+#section-casos h3 {
+    color: #1F3319;
+    background: linear-gradient(278deg, #ECFF8C, #1F3319);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.991875rem;
+    line-height: 120%;
+    letter-spacing: -.0068em;
+    font-weight: 700;
+}
 
 /* Sección principal */
 section#section-planificacion {
