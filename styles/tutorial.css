@@ -1,0 +1,117 @@
+.tutorialcontentmain {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    height: 236.25px;
+    background: #800080;
+    border-radius: 1rem;
+    color: #CAFFFF;
+}
+
+#TutorialUpload {
+    padding: 1rem 2rem;
+}
+
+.sectionImageTutorial {
+    width: 66%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden; /* Previene que la imagen se desborde */
+}
+
+.sectionImageTutorial img {
+    border-radius: 1rem;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover; /* Mantiene proporciones y ajusta la imagen */
+    object-position: center; /* Centra la imagen dentro del contenedor */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    height: 100%; /* Ajusta para llenar el alto del contenedor */
+}
+
+#TutorialUpload h3 {
+    color: #CAFFFF;
+    font-size: 1.2rem;
+    background: linear-gradient(47deg, #CAFFFF, #CAFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.591875rem;
+    line-height: 120%;
+    letter-spacing: -.0068em;
+    font-weight: 800;
+}
+
+.fa-arrow-right:before {
+    content: "\f061";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #CAFFFF;
+    display: block;
+    font-size: 1.2rem;
+    background: linear-gradient(47deg, #3bffe654, #01ecff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sectionContentTextTutorial {
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+
+.sectionContainBtnCtaTutorial {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button.btn-classic-basic {
+    background: #800080;
+    color: #CAFFFF;
+    padding: 9px 1rem;
+    display: flex;
+    border-radius: 1rem;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 5px;
+    border: 1px solid #CAFFFF;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+button.btn-classic-basic:hover {
+    background: #CAFFFF;
+    color: #800080;
+    border: 1px solid #800080;
+    transition: all .2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .tutorialcontentmain {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sectionImageTutorial {
+        width: 100%;
+    }
+
+    .sectionImageTutorial img {
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        height: 96px; /* Altura fija en modo móvil */
+        object-fit: cover; /* Asegura que se ajuste al contenedor sin deformarse */
+    }
+}
