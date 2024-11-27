@@ -1,0 +1,163 @@
+section#section-riesgos {
+    background: #E0EBFF;
+    color: #0F3E99;
+    padding: 30px;
+}
+#section-riesgos h3 {
+    font-size: 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(47deg, #00d0ff, #0F3E99);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.891875rem;
+    line-height: 120%;
+    letter-spacing: -.0068em;
+    font-weight: 400;
+}
+#section-casos ul,#section-riesgos ul {
+    padding: 1rem 2rem;
+}
+#section-casos li,#section-riesgos li{
+    display: flex    ;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    text-align: left;
+}
+
+#section-casos .line-part-content-share,
+#section-riesgos .line-part-content-share {
+    height: 1px;
+    margin-bottom: 1rem;
+}
+
+
+/* Sección principal */
+section#section-planificacion {
+    background: #1a1a1a;
+    color: #E5EDF5;
+    padding: 30px;
+}
+
+#section-planificacion .line-part-content-share {
+    background: linear-gradient(90deg, #ffffff, #c3ffe0 32.8125%, #a7cfff);
+    height: 1px;
+    margin-bottom: 1rem;
+}
+
+#section-planificacion ul {
+    padding: 1rem 2rem;
+    /* border-radius: 5px; */
+    /* border: 1px solid #ffffff; */
+}
+
+.introductionSectionContent {
+    /* text-align: left; */
+    padding: 0rem 1rem;
+}
+
+.sectionContentImage img {
+    border-radius: 1rem; /* Mantén el borde redondeado */
+    max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+    height: auto; /* Mantén la proporción original de la imagen */
+    display: block; /* Elimina el espacio debajo de las imágenes (comportamiento inline) */
+    margin: 0 auto;
+}
+
+#section-planificacion li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    text-align: left;
+}
+.sectionContentDiagram {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.section-content h3 {
+    /* font-size: 2rem; */
+    color: #89c4ff;
+    font-size: 1.2rem;
+    background: linear-gradient(47deg, #ffffff54, #f2feff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.891875rem;
+    line-height: 120%;
+    letter-spacing: -.0068em;
+    font-weight: 400;
+}
+
+/* Estilo de la lista */
+.section-content ul {
+    list-style: none; /* Quitar viñetas por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.section-content ul li {
+    position: relative;
+    padding-left: 30px; /* Espacio para el icono */
+    margin-bottom: 15px;
+}
+
+/* Añadiendo el icono Font Awesome */
+.section-content ul li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #89c4ff;
+    font-size: 1.2rem;
+    background: linear-gradient(47deg, #3bffe654, #01ecff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.line-part-content-share {
+    background: linear-gradient(90deg, #fffcf2, #ffbc4f 32.8125%, #d061f7);
+    border-radius: 100px;
+    flex: none;
+    height: 4px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+@media (max-width: 900px){
+    .sectionContentDiagram {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+    .introductionSectionContent {
+        text-align: left;
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .section-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .section-content ul li {
+        font-size: 0.9rem;
+    }
+
+    .section-content ul li::before {
+        font-size: 1rem;
+    }
+
+}
