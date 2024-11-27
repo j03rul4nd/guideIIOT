@@ -31,10 +31,15 @@
 }
   .sectionContentTextNewsletter p {
     font-size: 1rem;
-    color: #0F3E99;
+    color: #f9fafc;
     line-height: 1.6;
     margin-bottom: 24px;
     text-align: center;
+    padding: 1rem 2rem;
+    background: rgb(0 0 0 / 83%);
+    border-radius: 10px;
+    background: url();
+    background-image: url(./randombg.png);
   }
   
   /* Contenedor del formulario */
