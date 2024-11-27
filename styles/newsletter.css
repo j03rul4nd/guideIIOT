@@ -21,6 +21,7 @@
     background: linear-gradient(47deg, #0F3E99, #002f8a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 1px #ffffff, 0 0 10px #0F3E99, 0 0 15px #0F3E99, 0 0 20px #767bff, 0 0 30px #7abeff;
 }
   .sectionCenterNewsletterFonrm {
     display: flex;
