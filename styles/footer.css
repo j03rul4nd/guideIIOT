@@ -1,0 +1,27 @@
+/* Footer */
+footer {
+    margin-top: 3rem; /* Separación del contenido principal */
+    padding-top: 2rem; /* Espacio interno superior */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea sutil */
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 1rem 0;
+}
+
+footer a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        font-size: 0.7rem;
+    }
+}

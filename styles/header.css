@@ -1,0 +1,49 @@
+/* Header */
+header {
+  text-align: center;
+  z-index: 1;
+  max-width: 90%;
+  padding-top: 10vh; /* Espacio superior para comodidad */
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0 0 1.5rem; /* Separación entre título y descripción */
+  background: linear-gradient(to right, #363636, #030303);
+  background: linear-gradient(to right, #363636, #ffffff); 
+  background: linear-gradient(to right, #ffffff70, #ffffff);
+  /* Gradiente lineal de blanco a negro */
+  -webkit-background-clip: text; /* Solo aplica al texto */
+  -webkit-text-fill-color: transparent; /* Hace el fondo visible en el texto */
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 0 0 3rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 2rem;
+  }
+
+  header p {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+      font-size: 1.8rem;
+  }
+
+  header p {
+      font-size: 0.8rem;
+  }
+}
