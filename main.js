@@ -172,6 +172,7 @@ document.getElementById("btnSubToNewsletter")?.addEventListener("click", async (
       });
 
       button.setAttribute('send', 'true'); 
+      button.innerHTML = "Suscribirme";
       const responseData = await res.json();
           console.log(responseData);
   } else {
