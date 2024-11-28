@@ -133,4 +133,52 @@ document.getElementById("btn-tutorial").addEventListener("click", function() {
   window.open("https://vimeo.com/1034195872/947b8ed6f1?share=copy", "_blank");
 });
 
+
+
+document.getElementById("btnSubToNewsletter")?.addEventListener("click", async ()=>{
+  let user = "user for guide iot";
+  let correo = document.getElementById("emailinput")?.value;
+  let msg = `this user suscribed ${correo}`;
+
+  // Verificar que los campos no estén vacíos, nulos o indefinidos
+  if (correo !== undefined && correo !== null && correo.trim() !== "" &&
+      msg !== undefined && msg !== null && msg.trim() !== "") {
+      
+          var button = document.getElementById("btnSubToNewsletter");
+
+          // Agrega la clase shake para la animación
+          button.classList.add('shake');
+        
+          // Cambia el texto del botón después de la animación
+          setTimeout(function() {
+              button.innerText = 'Suscribed!';
+              // Remueve la clase shake después de la animación para que pueda reutilizarse
+              button.classList.remove('shake');
+          }, 500); // 500ms debe coincidir con la duración de la animación en CSS
+      
+          const res = await fetch('https://backendsendemailportfolio.onrender.com/send-email', {
+          method: "POST",
+          headers: {
+              "content-type": "application/json",
+          },
+          body: JSON.stringify({
+              from: correo, // 'onboarding@resend.dev',
+              to: 'joelbenitezdonari@gmail.com',
+              subject: `${user} | Services`,
+              html: `<p> ${msg} <strong>email frontend</strong>!</p>`,
+              text: "hi, joel new suscriber"
+          })
+          
+      });
+
+      button.setAttribute('send', 'true'); 
+      const responseData = await res.json();
+          console.log(responseData);
+  } else {
+      console.log("Todos los campos son obligatorios");
+  }
+
+})
+
+
 // #endregion
