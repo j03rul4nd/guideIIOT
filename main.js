@@ -182,4 +182,27 @@ document.getElementById("btnSubToNewsletter")?.addEventListener("click", async (
 })
 
 
+// Seleccionar todos los botones con la clase 'ctaDowload'
+const popupBg = document.getElementById('popupCtabg');
+const closePopup = document.querySelector('.iconclosepopup');
+const ctaButtons = document.querySelectorAll('.ctaDowloadbtn');
+
+// Agregar el evento a todos los botones
+ctaButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    popupBg.classList.add('active');
+  });
+});
+
+// Cerrar el popup con el botón de cerrar
+closePopup.addEventListener('click', () => {
+  popupBg.classList.remove('active');
+});
+
+// Cerrar el popup al hacer clic fuera de él
+popupBg.addEventListener('click', (e) => {
+  if (e.target === popupBg) {
+    popupBg.classList.remove('active');
+  }
+});
 // #endregion
