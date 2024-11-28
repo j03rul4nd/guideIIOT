@@ -139,6 +139,13 @@
 
 .sectionbtnctadowload .cta-button.secondary {
   background-color: #ffc107;
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: 200px;
 }
 
 /* Mostrar el popup */
