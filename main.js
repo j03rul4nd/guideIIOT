@@ -127,4 +127,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Seleccionar el botón por su ID
+document.getElementById("btn-tutorial").addEventListener("click", function() {
+  // Abrir el video de Vimeo en una nueva pestaña
+  window.open("https://vimeo.com/1034195872/947b8ed6f1?share=copy", "_blank");
+});
+
 // #endregion
