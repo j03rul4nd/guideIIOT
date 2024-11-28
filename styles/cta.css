@@ -143,14 +143,17 @@
 }
 
 .sectionbtnctadowload .cta-button.secondary {
-  background-color: #ffc107;
+  background-color: #ffffff;
   gap: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: nowrap;
   width: 200px;
+  border-radius: 5px;
+  padding: 10px 5px;
+  border: 3px solid #000000;
 }
 
 /* Mostrar el popup */
