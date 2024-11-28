@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página principal -->
+  <url>
+    <loc>https://guide-iiot.vercel.app/</loc>
+    <lastmod>2024-11-01</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Sección de planificación estratégica -->
+  <url>
+    <loc>https://guide-iiot.vercel.app/#section-planificacion</loc>
+    <lastmod>2024-11-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección de gestión de riesgos -->
+  <url>
+    <loc>https://guide-iiot.vercel.app/#section-riesgos</loc>
+    <lastmod>2024-11-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección de casos de éxito -->
+  <url>
+    <loc>https://guide-iiot.vercel.app/#section-casos</loc>
+    <lastmod>2024-11-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Tutorial de Node-RED -->
+  <url>
+    <loc>https://guide-iiot.vercel.app/#TutorialUpload</loc>
+    <lastmod>2024-11-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Sección de newsletter -->
+  <url>
+    <loc>https://guide-iiot.vercel.app/#newsletter</loc>
+    <lastmod>2024-11-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Archivo descargable -->
+  <url>
+    <loc>https://guide-iiot.vercel.app/iot.pdf</loc>
+    <lastmod>2024-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+</urlset>
