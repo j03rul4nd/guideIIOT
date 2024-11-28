@@ -27,6 +27,7 @@
 
 .news-card .overlay {
     position: absolute;
+    text-decoration: none; 
     top: 0;
     left: 0;
     width: 100%;

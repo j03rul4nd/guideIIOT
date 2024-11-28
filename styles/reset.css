@@ -16,6 +16,7 @@ body {
   color: white;
   text-align: center;
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .container {
